@@ -1,6 +1,6 @@
 # FRONTIER — Premium Smart Gadgets Store
 
-🔴 **Live demo: https://samoin-cloud.github.io/frontier/**
+🔴 **Live demo: https://samoin-cloud.github.io/frontier-demo/**
 
 A complete, **zero-dependency** e-commerce frontend covering the full 34-page spec: 28 hand-built pages, 232 procedurally-generated products, a design system with light/dark themes, cart → checkout → order tracking, account dashboard and more. Every asset is local except Google Fonts (which degrades gracefully to system fonts offline).
 
