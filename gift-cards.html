@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gift Cards | FRONTIER</title>
+  <meta name="description" content="Give the joy of choosing — digital or physical FRONTIER gift cards from $25 to $2,000.">
+  <meta property="og:title" content="Gift Cards | FRONTIER">
+  <meta property="og:description" content="Give the joy of choosing — digital or physical FRONTIER gift cards from $25 to $2,000.">
+  <meta property="og:type" content="page">
+  <meta property="og:site_name" content="FRONTIER">
+  <meta name="theme-color" content="#0A0A0F">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20rx%3D%2211%22%20fill%3D%22%236C5CE7%22%2F%3E%3Cpath%20d%3D%22M13%2010h15l-2.6%205.4H18v4h6.8L22.2%2025H18v7h-5V10Z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css?v=19">
+  <link rel="stylesheet" href="css/components.css?v=19">
+  <link rel="stylesheet" href="css/pages.css?v=19">
+</head>
+<body data-page="gift-cards">
+<main id="main" class="page-enter">
+
+<div class="container section">
+  <header style="text-align:center">
+    <span class="badge soft">THE EASY GIFT</span>
+    <h1 style="margin-top:12px">FRONTIER Gift Cards</h1>
+    <p class="text-dim" style="margin:12px auto 0;max-width:52ch">For the person whose gadget taste outruns your knowledge. Digital arrives in minutes; physical cards are heavy engraved metal and feel incredible.</p>
+  </header>
+  <div class="cart-layout section" style="padding-block:36px 0">
+    <div class="co-panel">
+      <h3 class="small" style="margin-bottom:12px">1 · Choose an amount</h3>
+      <div class="flex wrap" style="gap:10px" data-gift-amounts></div>
+      <h3 class="small" style="margin:22px 0 12px">2 · Pick a design</h3>
+      <div class="gift-designs" data-gift-designs></div>
+      <div class="gift-preview mesh" style="margin-top:20px">
+        <div style="text-align:center;position:relative;z-index:1">
+          <span class="mono tiny" style="opacity:.85;letter-spacing:.25em">FRONTIER</span>
+          <div style="font-family:var(--font-display);font-weight:700;font-size:clamp(2.4rem,6vw,3.6rem);line-height:1" data-preview-amt>$50</div>
+          <span class="tiny" data-preview-name>Nebula design</span>
+        </div>
+      </div>
+      <form data-gift-form class="section" style="padding-block:26px 0" >
+        <h3 class="small" style="margin-bottom:12px">3 · Who's the lucky one?</h3>
+        <div class="form-row">
+          <div class="field"><label>Recipient name *</label><input class="input" required placeholder="Sam Rivera"></div>
+          <div class="field"><label>Recipient email *</label><input class="input" type="email" required placeholder="sam@example.com"></div>
+        </div>
+        <div class="field"><label>Personal message</label><textarea class="input" maxlength="300" placeholder="May your cables never tangle."></textarea></div>
+        <div style="display:grid;gap:10px">
+          <label class="radio-row"><input type="radio" name="giftDelivery" value="email" checked><span class="radio-dot"></span><span class="small"><b>Email delivery</b> · arrives in ~2 minutes</span></label>
+          <label class="radio-row"><input type="radio" name="giftDelivery" value="physical"><span class="radio-dot"></span><span class="small"><b>Physical metal card</b> · $9.90 tracked shipping, engraving included</span></label>
+        </div>
+        <p class="tiny text-dim" id="physicalNotice" style="display:none;margin-top:8px">📦 Ships in 1 business day with a magnetic presentation case.</p>
+        <button class="btn btn-primary btn-lg btn-block" type="submit" data-gift-add style="margin-top:20px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/><path d="M2.5 3h2l2.4 12.2a1.8 1.8 0 0 0 1.77 1.44h8.9a1.8 1.8 0 0 0 1.76-1.4L21.5 7H5.3"/></svg> Add gift card to cart</button>
+      </form>
+    </div>
+    <aside style="display:grid;gap:22px;align-self:start">
+      <div class="co-panel">
+        <h3 class="small" style="margin-bottom:10px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg> Balance checker</h3>
+        <form id="balanceForm" class="promo-row"><input class="input mono" id="balanceInput" placeholder="GIFT-FR2K9X" style="text-transform:uppercase"><button class="btn btn-secondary" type="submit">Check</button></form>
+        <div id="balanceOut" style="display:none;margin-top:14px"></div>
+      </div>
+      <div class="co-panel legal-doc">
+        <h3 class="small">Fine print, painlessly</h3>
+        <ul style="margin-top:8px"><li>Valid on everything, forever</li><li>No fees — dormant cards never shrink</li><li>Combine balances freely with other payments</li><li>Regret-proof: refundable unused within 30 days</li></ul>
+      </div>
+      <div class="co-panel" style="text-align:center">
+        <div style="font-size:2rem">🎁</div><b class="small">Bulk corporate gifting?</b>
+        <p class="tiny text-dim" style="margin-top:6px">50+ cards get volume pricing & custom designs.</p>
+        <a class="btn btn-link small" href="contact.html">Talk to us →</a>
+      </div>
+    </aside>
+  </div>
+</div>
+</main>
+    <script src="js/icons.js?v=19" defer></script>
+    <script src="js/data.js?v=19" defer></script>
+    <script src="js/store.js?v=19" defer></script>
+    <script src="js/ui.js?v=19" defer></script>
+    <script src="js/layout.js?v=19" defer></script>
+    <script src="js/pages/content.js?v=19" defer></script>
+    <script src="js/main.js?v=19" defer></script>
+</body>
+</html>

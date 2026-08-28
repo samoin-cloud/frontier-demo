@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us | FRONTIER</title>
+  <meta name="description" content="Questions, feedback or partnership ideas — we'd love to hear from you.">
+  <meta property="og:title" content="Contact Us | FRONTIER">
+  <meta property="og:description" content="Questions, feedback or partnership ideas — we'd love to hear from you.">
+  <meta property="og:type" content="page">
+  <meta property="og:site_name" content="FRONTIER">
+  <meta name="theme-color" content="#0A0A0F">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20rx%3D%2211%22%20fill%3D%22%236C5CE7%22%2F%3E%3Cpath%20d%3D%22M13%2010h15l-2.6%205.4H18v4h6.8L22.2%2025H18v7h-5V10Z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css?v=19">
+  <link rel="stylesheet" href="css/components.css?v=19">
+  <link rel="stylesheet" href="css/pages.css?v=19">
+</head>
+<body data-page="contact">
+<main id="main" class="page-enter">
+
+<header class="section container mesh noise" style="text-align:center;border-radius:var(--r-xl)">
+  <div style="position:relative;z-index:1"><h1>We'd love to hear from you</h1>
+  <p class="text-dim" style="max-width:52ch;margin:14px auto 0">Average first reply: under 2 hours on weekdays. Real humans, no script theatre.</p></div>
+</header>
+<section class="container section" style="padding-top:34px">
+  <div class="grid grid-4" style="margin-bottom:48px">
+    <a class="stat-card reveal" href="#" onclick="UI.toast('info','Flagship store','132 Frontier Ave, Austin TX 78701');return false"><div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><b class="small">Visit us</b><p class="tiny text-dim" style="margin-top:6px">132 Frontier Ave,<br>Austin TX 78701</p></a>
+    <a class="stat-card reveal" data-delay="1" href="tel:+18005550199"><div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92Z"/></svg></div><b class="small">Call us</b><p class="tiny text-dim" style="margin-top:6px">+1 (800) 555-0199<br>Mon–Sat, 9–21 CT</p></a>
+    <a class="stat-card reveal" data-delay="2" href="mailto:hello@frontier.example"><div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div><b class="small">Email</b><p class="tiny text-dim" style="margin-top:6px">hello@frontier.example<br>Replies in ~2 hours</p></a>
+    <a class="stat-card reveal" data-delay="3" href="#" onclick="document.querySelector('.chat-launcher').click();return false"><div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></div><b class="small">Live chat</b><p class="tiny text-dim" style="margin-top:6px">Tap the bubble,<br>or press here ✨</p></a>
+  </div>
+  <div style="display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:start">
+    <form class="co-panel" data-contact-form novalidate>
+      <h2>Send a message</h2>
+      <div class="form-row" style="margin-top:18px">
+        <div class="field"><label for="ctName">Name *</label><input class="input" id="ctName" required placeholder="Ada Lovelace"></div>
+        <div class="field"><label for="ctMail">Email *</label><input class="input" type="email" id="ctMail" required placeholder="ada@example.com"></div>
+      </div>
+      <div class="field"><label for="ctSubject">Subject</label>
+        <select class="input" id="ctSubject"><option>Order support</option><option>Product question</option><option>Returns & warranty</option><option>Press / partnerships</option><option>Something delightful</option></select></div>
+      <div class="field"><label for="ctMsg">Message *</label><textarea class="input" id="ctMsg" required minlength="20" placeholder="Tell us everything… (order numbers help!)"></textarea></div>
+      <div class="field"><label for="ctFile">Attachment (optional)</label><input class="input" type="file" id="ctFile"></div>
+      <button class="btn btn-primary btn-lg" type="submit"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg> Send message</button>
+      <p class="tiny text-dim" style="margin-top:10px">By sending you agree to our <a class="btn-link" href="privacy.html">privacy policy</a>.</p>
+    </form>
+    <div>
+      <iframe title="Map to FRONTIER HQ" width="100%" height="230" style="border:0;border-radius:var(--r-lg);filter:invert(.92) hue-rotate(180deg)" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-97.76%2C30.25%2C-97.72%2C30.28&amp;layer=mapnik"></iframe>
+      <div class="co-panel" style="margin-top:22px">
+        <h3 class="small" style="margin-bottom:10px">Business hours</h3>
+        <table class="tbl" style="border:none"><tbody>
+          <tr><td class="small text-dim" style="border:none;padding:7px 10px 7px 0">Mon – Fri</td><td class="mono small" style="border:none;padding:7px 0">9:00 – 21:00</td></tr><tr><td class="small text-dim" style="border:none;padding:7px 10px 7px 0">Saturday</td><td class="mono small" style="border:none;padding:7px 0">10:00 – 18:00</td></tr><tr><td class="small text-dim" style="border:none;padding:7px 10px 7px 0">Sunday</td><td class="mono small" style="border:none;padding:7px 0">Chat bot only</td></tr><tr><td class="small text-dim" style="border:none;padding:7px 10px 7px 0">Holidays</td><td class="mono small" style="border:none;padding:7px 0">Reduced hours</td></tr>
+        </tbody></table>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section container" aria-labelledby="cfqH">
+  <div class="section-head reveal in-view"><div><h2 id="cfqH">Quick answers</h2><p>The questions we field most before lunchtime.</p></div>
+  <a class="btn btn-link" href="faq.html">Full FAQ →</a></div>
+  <div data-contact-faq style="max-width:860px"></div>
+</section>
+</main>
+    <script src="js/icons.js?v=19" defer></script>
+    <script src="js/data.js?v=19" defer></script>
+    <script src="js/store.js?v=19" defer></script>
+    <script src="js/ui.js?v=19" defer></script>
+    <script src="js/layout.js?v=19" defer></script>
+    <script src="js/pages/content.js?v=19" defer></script>
+    <script src="js/main.js?v=19" defer></script>
+</body>
+</html>

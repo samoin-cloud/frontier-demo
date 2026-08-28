@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://frontier.example/index.html</loc><priority>1.0</priority></url>
+  <url><loc>https://frontier.example/shop.html</loc><priority>0.9</priority></url>
+  <url><loc>https://frontier.example/categories.html</loc><priority>0.9</priority></url>
+  <url><loc>https://frontier.example/product.html</loc><priority>0.9</priority></url>
+  <url><loc>https://frontier.example/blog.html</loc><priority>0.8</priority></url>
+  <url><loc>https://frontier.example/blog-post.html</loc><priority>0.7</priority></url>
+  <url><loc>https://frontier.example/about.html</loc><priority>0.6</priority></url>
+  <url><loc>https://frontier.example/contact.html</loc><priority>0.6</priority></url>
+  <url><loc>https://frontier.example/cart.html</loc><priority>0.4</priority></url>
+  <url><loc>https://frontier.example/checkout.html</loc><priority>0.3</priority></url>
+  <url><loc>https://frontier.example/order-confirmation.html</loc><priority>0.2</priority></url>
+  <url><loc>https://frontier.example/wishlist.html</loc><priority>0.4</priority></url>
+  <url><loc>https://frontier.example/login.html</loc><priority>0.5</priority></url>
+  <url><loc>https://frontier.example/account.html</loc><priority>0.5</priority></url>
+  <url><loc>https://frontier.example/order-tracking.html</loc><priority>0.6</priority></url>
+  <url><loc>https://frontier.example/compare.html</loc><priority>0.5</priority></url>
+  <url><loc>https://frontier.example/search.html</loc><priority>0.6</priority></url>
+  <url><loc>https://frontier.example/faq.html</loc><priority>0.6</priority></url>
+  <url><loc>https://frontier.example/support.html</loc><priority>0.6</priority></url>
+  <url><loc>https://frontier.example/gift-cards.html</loc><priority>0.6</priority></url>
+  <url><loc>https://frontier.example/newsletter.html</loc><priority>0.4</priority></url>
+  <url><loc>https://frontier.example/shipping-returns.html</loc><priority>0.5</priority></url>
+  <url><loc>https://frontier.example/warranty.html</loc><priority>0.5</priority></url>
+  <url><loc>https://frontier.example/privacy.html</loc><priority>0.3</priority></url>
+  <url><loc>https://frontier.example/terms.html</loc><priority>0.3</priority></url>
+  <url><loc>https://frontier.example/accessibility.html</loc><priority>0.3</priority></url>
+  <url><loc>https://frontier.example/sitemap.html</loc><priority>0.2</priority></url>
+  <url><loc>https://frontier.example/404.html</loc><priority>0.1</priority></url>
+</urlset>

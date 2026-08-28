@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop All Products | FRONTIER</title>
+  <meta name="description" content="Filter and sort 224 premium smart gadgets by category, price, brand, rating, connectivity and battery life.">
+  <meta property="og:title" content="Shop All Products | FRONTIER">
+  <meta property="og:description" content="Filter and sort 224 premium smart gadgets by category, price, brand, rating, connectivity and battery life.">
+  <meta property="og:type" content="page">
+  <meta property="og:site_name" content="FRONTIER">
+  <meta name="theme-color" content="#0A0A0F">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20rx%3D%2211%22%20fill%3D%22%236C5CE7%22%2F%3E%3Cpath%20d%3D%22M13%2010h15l-2.6%205.4H18v4h6.8L22.2%2025H18v7h-5V10Z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css?v=19">
+  <link rel="stylesheet" href="css/components.css?v=19">
+  <link rel="stylesheet" href="css/pages.css?v=19">
+</head>
+<body data-page="shop">
+<main id="main" class="page-enter">
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb" data-breadcrumb></nav>
+  <header style="margin-bottom:26px" class="reveal in-view">
+    <h1>All products</h1>
+    <p class="text-dim">224 gadgets · updated daily · only what passed our lab tests.</p>
+  </header>
+  <div class="shop-layout">
+    <aside class="filter-sidebar" aria-label="Product filters">
+      <div class="filter-group"><button class="filter-head" type="button">Category <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="filter-body" data-filter-cats></div></div>
+      <div class="filter-group"><div class="filter-head">Price range</div>
+        <input type="range" class="range" data-price-role="min" data-price-min min="0" max="3000" value="0" aria-label="Minimum price">
+        <input type="range" class="range" data-price-role="max" data-price-max min="0" max="3000" value="3000" aria-label="Maximum price">
+        <div class="range-values" data-price-labels></div></div>
+      <div class="filter-group"><div class="filter-head">Brand</div>
+        <div class="filter-body" data-filter-brands></div></div>
+      <div class="filter-group"><div class="filter-head">Rating</div>
+        <div class="filter-body" data-filter-rating></div></div>
+      <div class="filter-group"><div class="filter-head">Availability</div>
+        <div class="filter-body flex center" id="stockGroup" data-filter-stock></div></div>
+      <div class="filter-group"><div class="filter-head">Color</div>
+        <div class="flex wrap" style="gap:10px;padding-top:12px" data-filter-colors></div></div>
+      <div class="filter-group"><div class="filter-head">Connectivity</div>
+        <div class="filter-body" data-filter-connect></div></div>
+      <div class="filter-group" style="border:none"><div class="filter-head">Battery life</div>
+        <div class="filter-body" data-filter-battery></div></div>
+    </aside>
+    <div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px" data-sub-list></div>
+      <div class="shop-toolbar">
+        <button class="btn btn-secondary btn-sm mobile-filter-btn" data-open-filters><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3Z"/></svg> Filters</button>
+        <span class="small text-dim" data-counter>Showing products…</span>
+        <div style="margin-left:auto;display:flex;gap:12px;align-items:center">
+          <label class="tiny text-dim" for="sortSel" style="display:flex;align-items:center;gap:8px">Sort
+            <select class="input" id="sortSel" data-sort style="padding:8px 34px 8px 13px;font-size:.85rem">
+              <option value="popular">Most popular</option><option value="newest">Newest</option>
+              <option value="price-asc">Price: low → high</option><option value="price-desc">Price: high → low</option>
+              <option value="rating">Best rated</option><option value="sale">Biggest discount</option>
+            </select></label>
+          <div class="view-toggle" role="group" aria-label="View mode">
+            <button class="active" data-view="grid" aria-label="Grid view"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></button>
+            <button data-view="list" aria-label="List view"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <div style="min-height:34px;display:flex;gap:8px;flex-wrap:wrap;align-items:center" data-active-chips></div>
+      <div class="products-grid" data-results aria-live="polite"></div>
+      <div style="display:grid;place-items:center;margin-top:34px">
+        <button class="btn btn-ghost btn-lg" data-load-more>Load more products</button>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+    <script src="js/icons.js?v=19" defer></script>
+    <script src="js/data.js?v=19" defer></script>
+    <script src="js/store.js?v=19" defer></script>
+    <script src="js/ui.js?v=19" defer></script>
+    <script src="js/layout.js?v=19" defer></script>
+    <script src="js/pages/shop.js?v=19" defer></script>
+    <script src="js/main.js?v=19" defer></script>
+</body>
+</html>

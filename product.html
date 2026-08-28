@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product | FRONTIER</title>
+  <meta name="description" content="Full specifications, gallery, verified reviews and instant checkout.">
+  <meta property="og:title" content="Product | FRONTIER">
+  <meta property="og:description" content="Full specifications, gallery, verified reviews and instant checkout.">
+  <meta property="og:type" content="page">
+  <meta property="og:site_name" content="FRONTIER">
+  <meta name="theme-color" content="#0A0A0F">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20rx%3D%2211%22%20fill%3D%22%236C5CE7%22%2F%3E%3Cpath%20d%3D%22M13%2010h15l-2.6%205.4H18v4h6.8L22.2%2025H18v7h-5V10Z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css?v=19">
+  <link rel="stylesheet" href="css/components.css?v=19">
+  <link rel="stylesheet" href="css/pages.css?v=19">
+</head>
+<body data-page="product">
+<main id="main" class="page-enter">
+
+<div id="pdRoot"></div>
+<div class="container section" data-pd-tabs data-tabs-scope>
+  <div class="tabs-bar" role="tablist">
+    <button class="tab-btn active" data-tab="desc" role="tab" aria-selected="true">Description</button>
+    <button class="tab-btn" data-tab="specs" role="tab" aria-selected="false">Specifications</button>
+    <button class="tab-btn" data-tab="reviews" role="tab" aria-selected="false" id="reviews">Reviews</button>
+    <button class="tab-btn" data-tab="shipping" role="tab" aria-selected="false">Shipping & returns</button>
+    <span class="tab-indicator"></span>
+  </div>
+  <div class="tab-panel active" data-panel="desc">
+    <div class="legal-doc" id="pdDescTab"></div>
+  </div>
+  <div class="tab-panel" data-panel="specs">
+    <div class="table-wrap"><table class="tbl spec-table" id="pdSpecsTable"><tbody></tbody></table></div>
+  </div>
+  <div class="tab-panel" data-panel="reviews">
+    <div class="review-bar">
+      <div style="text-align:center;background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--r-lg);padding:24px">
+        <div class="rb-avg" id="pdAvgRating">—</div>
+        <div style="margin:8px 0" id="pdAvgStars"></div>
+        <span class="tiny text-dim" id="pdAvgCount"></span>
+      </div>
+      <div style="display:grid;gap:9px" data-rev-bars></div>
+    </div>
+    <div data-rev-list></div>
+    <form class="co-panel" data-review-form style="margin-top:30px">
+      <h3>Write a review</h3>
+      <p class="small text-dim">Share the honest details other shoppers crave.</p>
+      <div class="field"><label>Your rating</label><div class="rate-input"><button type="button" data-rate="5" aria-label="5 stars"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2Z"/></svg></button><button type="button" data-rate="4" aria-label="4 stars"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2Z"/></svg></button><button type="button" data-rate="3" aria-label="3 stars"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2Z"/></svg></button><button type="button" data-rate="2" aria-label="2 stars"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2Z"/></svg></button><button type="button" data-rate="1" aria-label="1 star"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2Z"/></svg></button></div></div>
+      <div class="field"><label for="rvTitle">Review headline</label><input class="input" id="rvTitle" required maxlength="60" placeholder="Sums it up in a sentence"></div>
+      <div class="field"><label for="rvBody">Your experience</label><textarea class="input" id="rvBody" required placeholder="What worked, what didn't, who it's for…"></textarea></div>
+      <button class="btn btn-primary" type="submit">Submit review</button>
+    </form>
+  </div>
+  <div class="tab-panel" data-panel="shipping">
+    <div class="grid grid-3">
+      <div class="stat-card"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M14 9h4.6a2 2 0 0 1 1.75 1.03L23 14v3a1 1 0 0 1-1 1h-1.5"/><circle cx="6.5" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/></svg><b class="small">Free over $99</b><p class="text-dim tiny" style="margin-top:6px">Standard 3–5 business days, fully tracked.</p></div>
+      <div class="stat-card"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></svg><b class="small">Express options</b><p class="text-dim tiny" style="margin-top:6px">1–2 day express or overnight where available.</p></div>
+      <div class="stat-card"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15.36-6.36L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.36 6.36L3 16"/><path d="M3 21v-5h5"/></svg><b class="small">30-day returns</b><p class="text-dim tiny" style="margin-top:6px">Prepaid label in every box, quick refunds.</p></div>
+    </div>
+    <a class="btn btn-primary" style="margin-top:22px" href="shipping-returns.html">Full shipping policy <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
+  </div>
+</div>
+<section class="section container" aria-labelledby="relH">
+  <div class="section-head reveal in-view"><div><h2 id="relH">You may also like</h2><p>Hand-picked companions at similar price points.</p></div>
+  <a class="btn btn-link" href="shop.html">Browse all →</a></div>
+  <div class="products-grid grid grid-4" data-related></div>
+</section>
+<aside class="recently-viewed" aria-label="Recently viewed products"><div class="container rv-inner"></div></aside>
+<div class="sticky-atc"><div class="container sticky-atc-inner"></div></div>
+</main>
+    <script src="js/icons.js?v=19" defer></script>
+    <script src="js/data.js?v=19" defer></script>
+    <script src="js/store.js?v=19" defer></script>
+    <script src="js/ui.js?v=19" defer></script>
+    <script src="js/layout.js?v=19" defer></script>
+    <script src="js/pages/product.js?v=19" defer></script>
+    <script src="js/main.js?v=19" defer></script>
+</body>
+</html>

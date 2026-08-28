@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Account | FRONTIER</title>
+  <meta name="description" content="Orders, addresses, payment methods and preferences — all in one dashboard.">
+  <meta property="og:title" content="My Account | FRONTIER">
+  <meta property="og:description" content="Orders, addresses, payment methods and preferences — all in one dashboard.">
+  <meta property="og:type" content="page">
+  <meta property="og:site_name" content="FRONTIER">
+  <meta name="theme-color" content="#0A0A0F">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20rx%3D%2211%22%20fill%3D%22%236C5CE7%22%2F%3E%3Cpath%20d%3D%22M13%2010h15l-2.6%205.4H18v4h6.8L22.2%2025H18v7h-5V10Z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css?v=19">
+  <link rel="stylesheet" href="css/components.css?v=19">
+  <link rel="stylesheet" href="css/pages.css?v=19">
+</head>
+<body data-page="account">
+<main id="main" class="page-enter">
+
+<div class="container section">
+  <header class="flex between center wrap" style="margin-bottom:30px;gap:14px">
+    <div class="flex center" style="gap:16px">
+      <span class="avatar lg" data-user-avatar-big data-user-initials>··</span>
+      <div><h1 style="font-size:1.5rem">Hey, <span data-user-name>friend</span> 👋</h1>
+        <span class="small text-dim mono" data-user-email>—</span></div>
+    </div>
+    <button class="btn btn-ghost btn-sm" id="logoutBtn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg> Sign out</button>
+  </header>
+  <div class="account-layout">
+    <nav class="account-nav" aria-label="Account sections">
+      <a href="#overview" data-acct-nav="overview"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg> Overview</a><a href="#orders" data-acct-nav="orders"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.27 9 5.15M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg> My orders</a><a href="#addresses" data-acct-nav="addresses"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Addresses</a><a href="#payments" data-acct-nav="payments"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2.5"/><path d="M2 10h20"/></svg> Payment methods</a><a href="#settings" data-acct-nav="settings"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2Z"/><circle cx="12" cy="12" r="3"/></svg> Profile settings</a><a href="#notifications" data-acct-nav="notifications"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg> Notifications</a>
+    </nav>
+    <div>
+      <!-- overview -->
+      <section class="acct-section active co-panel" id="overview">
+        <h2 style="font-size:1.2rem">Quick glance</h2>
+        <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(140px,1fr));margin-block:18px">
+          <div class="stat-card"><div class="big-stat" data-stat-orders>0</div><span class="tiny text-dim">Total orders</span></div>
+          <div class="stat-card"><div class="big-stat" data-stat-spent>$0</div><span class="tiny text-dim">Lifetime spend</span></div>
+          <div class="stat-card"><div class="big-stat" data-stat-wishes>0</div><span class="tiny text-dim">Wishlist items</span></div>
+        </div>
+        <h3 class="small" style="margin-bottom:10px">Recent orders</h3>
+        <table class="tbl"><thead><tr><th>Order #</th><th>Date</th><th>Status</th><th>Total</th><th></th></tr></thead>
+        <tbody data-recent-orders></tbody></table>
+        <h3 class="small" style="margin:26px 0 10px">Recently viewed</h3>
+        <div class="h-scroll" data-acct-recent></div>
+      </section>
+      <!-- orders -->
+      <section class="acct-section co-panel" id="orders">
+        <h2 style="font-size:1.2rem">All orders</h2>
+        <div class="table-wrap" style="margin-top:16px"><table class="tbl"><thead><tr><th>Order #</th><th>Date</th><th>Status</th><th>Total</th><th></th></tr></thead>
+        <tbody data-orders-tbody></tbody></table></div>
+      </section>
+      <!-- addresses -->
+      <section class="acct-section" id="addresses">
+        <h2 style="font-size:1.2rem;margin-bottom:16px">Address book</h2>
+        <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(250px,1fr));margin-bottom:22px" data-address-list></div>
+        <form class="co-panel" id="addrForm" style="max-width:560px">
+          <h3 class="small" style="margin-bottom:14px">Add a new address</h3>
+          <div class="form-row">
+            <div class="field"><label>Label</label><input class="input" name="label" placeholder="Home / Gym / Granny"></div>
+            <div class="field"><label>Recipient</label><input class="input" name="name" required></div>
+          </div>
+          <div class="field"><label>Street address</label><input class="input" name="line1" required></div>
+          <div class="form-row thirds">
+            <div class="field"><label>City</label><input class="input" name="city" required></div>
+            <div class="field"><label>ZIP</label><input class="input" name="zip" required></div>
+            <div class="field"><label>Country</label><input class="input" name="country" value="United States"></div>
+          </div>
+          <div class="field"><label>Phone</label><input class="input" name="phone" type="tel"></div>
+          <button class="btn btn-primary btn-sm" type="submit"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg> Save address</button>
+        </form>
+      </section>
+      <!-- payments -->
+      <section class="acct-section" id="payments">
+        <h2 style="font-size:1.2rem;margin-bottom:16px">Saved cards</h2>
+        <div class="grid" style="gap:14px;margin-bottom:22px" data-cards-list></div>
+        <form class="co-panel" id="cardForm" style="max-width:420px">
+          <h3 class="small" style="margin-bottom:14px">Add a card</h3>
+          <div class="field"><label>Card number</label><input class="input mono" name="cnum" inputmode="numeric" required placeholder="4242 4242 4242 4242"></div>
+          <div class="form-row">
+            <div class="field"><label>Expiry</label><input class="input mono" name="cexp" placeholder="MM/YY"></div>
+          </div>
+          <button class="btn btn-primary btn-sm" type="submit"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg> Add card</button>
+          <p class="tiny text-dim" style="margin-top:10px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Tokenized via our PCI Level 1 processor.</p>
+        </form>
+      </section>
+      <!-- settings -->
+      <section class="acct-section" id="settings">
+        <h2 style="font-size:1.2rem;margin-bottom:16px">Profile settings</h2>
+        <div class="flex center" style="gap:18px;margin-bottom:20px">
+          <span class="avatar lg" style="width:70px;height:70px;font-size:1.4rem" data-user-avatar-big>FR</span>
+          <button class="btn btn-secondary btn-sm" id="avatarPick"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3Z"/><path d="M19 15l.9 2.4L22.4 18l-2.5.9L19 21l-.9-2.1-2.5-.9 2.5-.6L19 15Z"/></svg> Shuffle avatar color</button>
+        </div>
+        <form class="co-panel" id="settingsForm" style="max-width:480px;margin-bottom:22px">
+          <div class="field"><label for="setName">Display name</label><input class="input" id="setName"></div>
+          <div class="field"><label for="setEmail">Email</label><input class="input" id="setEmail" type="email"></div>
+          <button class="btn btn-primary btn-sm" type="submit">Save profile</button>
+        </form>
+        <form class="co-panel" id="pwChangeForm" style="max-width:480px">
+          <h3 class="small" style="margin-bottom:14px">Change password</h3>
+          <div class="field"><label>Current password</label><input class="input" type="password" required></div>
+          <div class="field"><label>New password</label><input class="input" type="password" required minlength="8"></div>
+          <button class="btn btn-secondary btn-sm" type="submit">Update password</button>
+        </form>
+      </section>
+      <!-- notifications -->
+      <section class="acct-section co-panel" id="notifications">
+        <h2 style="font-size:1.2rem">Notification channels</h2>
+        <p class="small text-dim" style="margin:6px 0 18px">Receipts & security alerts always arrive regardless of these toggles.</p>
+        <div style="display:grid;gap:16px;max-width:460px">
+          <label class="flex between center"><span><b class="small">Email digests</b><br><span class="tiny text-dim">Weekly drop news, price alerts</span></span><span class="switch"><input type="checkbox"><span class="track"></span></span></label>
+          <label class="flex between center"><span><b class="small">SMS updates</b><br><span class="tiny text-dim">Delivery-day texts (carrier rates may apply)</span></span><span class="switch"><input type="checkbox"><span class="track"></span></span></label>
+          <label class="flex between center"><span><b class="small">Push notifications</b><br><span class="tiny text-dim">Flash sale early access on mobile app</span></span><span class="switch"><input type="checkbox"><span class="track"></span></span></label>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+</main>
+    <script src="js/icons.js?v=19" defer></script>
+    <script src="js/data.js?v=19" defer></script>
+    <script src="js/store.js?v=19" defer></script>
+    <script src="js/ui.js?v=19" defer></script>
+    <script src="js/layout.js?v=19" defer></script>
+    <script src="js/pages/account.js?v=19" defer></script>
+    <script src="js/main.js?v=19" defer></script>
+</body>
+</html>

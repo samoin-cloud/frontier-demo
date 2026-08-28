@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Help Center | FRONTIER Support</title>
+  <meta name="description" content="Track orders, start returns, file claims and reach humans fast — welcome to the Help Center.">
+  <meta property="og:title" content="Help Center | FRONTIER Support">
+  <meta property="og:description" content="Track orders, start returns, file claims and reach humans fast — welcome to the Help Center.">
+  <meta property="og:type" content="page">
+  <meta property="og:site_name" content="FRONTIER">
+  <meta name="theme-color" content="#0A0A0F">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20rx%3D%2211%22%20fill%3D%22%236C5CE7%22%2F%3E%3Cpath%20d%3D%22M13%2010h15l-2.6%205.4H18v4h6.8L22.2%2025H18v7h-5V10Z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css?v=19">
+  <link rel="stylesheet" href="css/components.css?v=19">
+  <link rel="stylesheet" href="css/pages.css?v=19">
+</head>
+<body data-page="support">
+<main id="main" class="page-enter">
+
+<header class="container section mesh noise" style="text-align:center;border-radius:0 0 var(--r-xl) var(--r-xl)">
+  <div style="position:relative;z-index:1">
+    <h1>How can we help you today?</h1>
+    <div class="promo-row" style="max-width:480px;margin:24px auto 0">
+      <input class="input" placeholder="Search help articles… e.g. “refund”" aria-label="Search help"
+        onkeydown="if(event.key==='Enter')location.href='faq.html'">
+      <a class="btn btn-primary" href="faq.html">Search</a>
+    </div>
+    <p class="tiny text-dim" style="margin-top:12px" data-hours-note></p>
+  </div>
+</header>
+<section class="container section">
+  <div class="grid grid-3" data-support-links></div>
+</section>
+<div class="cart-layout container" style="padding-bottom:40px">
+  <section>
+    <div class="section-head"><div><h2>Popular support articles</h2></div><a class="btn btn-link" href="faq.html">All 52 answers →</a></div>
+    <div class="co-panel"><ul data-popular-help></ul></div>
+    <div class="co-panel news-band" style="margin-top:22px;padding:30px;text-align:left">
+      <h3 class="small" style="color:#fff">Status snapshot</h3>
+      <div class="flex wrap" style="gap:14px;margin-top:12px;color:#fff">
+        <span class="status-pill delivered">All systems operational</span>
+        <span class="status-pill shipped">Carriers: normal flow</span>
+        <span class="status-pill processing">Holiday volume: mild delay ±1 day</span>
+      </div>
+    </div>
+  </section>
+  <aside class="co-panel">
+    <h3 class="small">Create a support ticket</h3>
+    <p class="tiny text-dim" style="margin:6px 0 16px">Priority queue with SLA under 2 hours.</p>
+    <form id="ticketForm">
+      <div class="field"><label>Email *</label><input class="input" type="email" required></div>
+      <div class="field"><label>Topic *</label><select class="input" required><option>Order issue</option><option>Technical problem</option><option>Return / exchange</option><option>Warranty claim</option><option>Billing question</option><option>Feedback</option></select></div>
+      <div class="field"><label>Describe it *</label><textarea class="input" required minlength="20" placeholder="What happened, what you expected, order number if any…"></textarea></div>
+      <div class="field"><label>Attach evidence (optional)</label><input class="input" type="file"></div>
+      <button class="btn btn-primary btn-block" type="submit"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg> Create ticket</button>
+    </form>
+  </aside>
+</div>
+</main>
+    <script src="js/icons.js?v=19" defer></script>
+    <script src="js/data.js?v=19" defer></script>
+    <script src="js/store.js?v=19" defer></script>
+    <script src="js/ui.js?v=19" defer></script>
+    <script src="js/layout.js?v=19" defer></script>
+    <script src="js/pages/content.js?v=19" defer></script>
+    <script src="js/main.js?v=19" defer></script>
+</body>
+</html>

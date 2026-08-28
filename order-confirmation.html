@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Order Confirmed | FRONTIER</title>
+  <meta name="description" content="Thank you — your order is confirmed and on its way.">
+  <meta property="og:title" content="Order Confirmed | FRONTIER">
+  <meta property="og:description" content="Thank you — your order is confirmed and on its way.">
+  <meta property="og:type" content="page">
+  <meta property="og:site_name" content="FRONTIER">
+  <meta name="theme-color" content="#0A0A0F">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20rx%3D%2211%22%20fill%3D%22%236C5CE7%22%2F%3E%3Cpath%20d%3D%22M13%2010h15l-2.6%205.4H18v4h6.8L22.2%2025H18v7h-5V10Z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css?v=19">
+  <link rel="stylesheet" href="css/components.css?v=19">
+  <link rel="stylesheet" href="css/pages.css?v=19">
+</head>
+<body data-page="confirmation">
+<main id="main" class="page-enter">
+
+<section class="container section">
+  <canvas class="confetti-canvas" hidden></canvas>
+  <div class="success-card reveal in-view">
+    <div class="success-check">
+      <svg width="54" height="54" viewBox="0 0 54 54"><path d="M14 28 L24 38 L40 18" fill="none" stroke="#22c55e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <h1 style="margin-top:24px">Thank you! Order confirmed 🎉</h1>
+    <p class="text-dim" style="margin-top:10px">We've emailed your receipt to the address used at checkout.</p>
+    <div class="flex center" style="justify-content:center;gap:12px;margin-top:20px;flex-wrap:wrap">
+      <span class="tiny text-dim">ORDER NUMBER</span>
+      <b class="mono price" style="font-size:1.3rem" data-order-num>—</b>
+      <button class="copy-btn" id="copyOrderBtn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg> Copy</button>
+    </div>
+    <div class="addr-cards">
+      <div class="co-panel" style="text-align:left"><h3 class="small" style="margin-bottom:8px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Shipping to</h3><div data-conf-address></div></div>
+      <div class="co-panel" style="text-align:left"><h3 class="small" style="margin-bottom:8px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2.5"/><path d="M2 10h20"/></svg> Payment & method</h3><div data-conf-pay></div></div>
+    </div>
+    <div class="co-panel" style="text-align:left">
+      <h3 class="small" style="margin-bottom:12px">Items in this order</h3>
+      <div class="order-summary-list" data-conf-items></div>
+      <hr style="border:none;border-top:1px dashed var(--border);margin-block:16px">
+      <div class="kv-row"><span class="text-dim">Placed on</span><b class="mono small" data-conf-date></b></div>
+      <div class="kv-row"><span class="text-dim"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Estimated delivery</span><b class="mono small" style="color:#22c55e" data-conf-eta></b></div>
+    </div>
+    <div class="flex center wrap" style="justify-content:center;gap:12px;margin-top:26px">
+      <a class="btn btn-primary btn-lg" data-track-href href="order-tracking.html"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 19-9-9 19-2-8-8-2Z"/></svg> Track order</a>
+      <a class="btn btn-ghost btn-lg" href="shop.html">Continue shopping</a>
+    </div>
+    <p class="tiny text-dim" style="margin-top:18px">📬 A confirmation email is waiting in your inbox — it doubles as your receipt.</p>
+  </div>
+</section>
+</main>
+    <script src="js/icons.js?v=19" defer></script>
+    <script src="js/data.js?v=19" defer></script>
+    <script src="js/store.js?v=19" defer></script>
+    <script src="js/ui.js?v=19" defer></script>
+    <script src="js/layout.js?v=19" defer></script>
+    <script src="js/pages/commerce.js?v=19" defer></script>
+    <script src="js/main.js?v=19" defer></script>
+</body>
+</html>
