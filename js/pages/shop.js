@@ -5,7 +5,7 @@ UI.FPages.shop = function () {
     cat: params.get('cat') || '', sub: params.get('sub') || '',
     q: params.get('q') || '', sale: params.get('sale') === '1',
     brands: [], minPrice: null, maxPrice: null, rating: 0,
-    inStockOnly: false, colors: [], connect: [], batteryMin: 0,
+    inStockOnly: false, colors: [], connect: [], age: '',
     sort: 'popular', page: 1, perPage: 12, view: 'grid'
   };
   if (F.sub) F.cat = F.cat || '';
@@ -57,9 +57,11 @@ UI.FPages.shop = function () {
     return '<label class="checkbox"><input type="checkbox" value="' + ck + '" data-fconn><span class="checkmark">' + FR_ICON('check', 11) + '</span>' + ck + '</label>';
   }).join('');
 
-  qs('[data-filter-battery]').innerHTML = ['Any', '20h+', '40h+', '60h+'].map(function (b, i) {
-    return '<label class="checkbox"><input type="radio" name="fbat" value="' + i * 20 + '" ' + (i === 0 ? 'checked' : '') + '><span class="checkmark">' + FR_ICON('check', 11) + '</span>' + b + '</label>';
-  }).join('');
+  var AGE_BUCKETS = [['1-2', 'Ages 1–2', 1, 2], ['3-4', 'Ages 3–4', 3, 4], ['5-7', 'Ages 5–7', 5, 7], ['8-10', 'Ages 8–10', 8, 10]];
+  qs('[data-filter-age]').innerHTML = '<label class="checkbox"><input type="radio" name="fage" value="" checked><span class="checkmark">' + FR_ICON('check', 11) + '</span>Any age</label>' +
+    AGE_BUCKETS.map(function (b) {
+      return '<label class="checkbox"><input type="radio" name="fage" value="' + b[0] + '"><span class="checkmark">' + FR_ICON('check', 11) + '</span>' + b[1] + '</label>';
+    }).join('');
 
   qs('[data-sub-list]').innerHTML = F.cat ? (DATA.cats.filter(function (c) { return c.slug === F.cat; })[0] || { subs: [] }).subs.map(function (s) {
     return '<button class="chip' + (decodeURIComponent(F.sub) === s ? ' active' : '') + '" data-chip-sub="' + s + '">' + s + '</button>';
@@ -95,7 +97,11 @@ UI.FPages.shop = function () {
     if (F.inStockOnly) out = out.filter(function (p) { return p.stock !== 'out'; });
     if (F.colors.length) out = out.filter(function (p) { return p.colors.some(function (c) { return F.colors.indexOf(c.name) !== -1; }); });
     if (F.connect.length) out = out.filter(function (p) { return F.connect.some(function (cc) { return p.connectivity.indexOf(cc) !== -1; }); });
-    if (F.batteryMin > 0) out = out.filter(function (p) { return p.battery >= F.batteryMin; });
+    if (F.age) {
+      var bucket = null;
+      AGE_BUCKETS.forEach(function (b) { if (b[0] === F.age) bucket = b; });
+      if (bucket) out = out.filter(function (p) { return p.ageMax >= bucket[2] && p.ageMin <= bucket[3]; });
+    }
 
     switch (F.sort) {
       case 'price-asc': out.sort(function (a, b) { return a.price - b.price; }); break;
@@ -159,7 +165,7 @@ UI.FPages.shop = function () {
     if (F.inStockOnly) add('In stock', function () { F.inStockOnly = false; qs('#stockSwitch').checked = false; rerender(); });
     F.colors.forEach(function (c) { add(c, function () { F.colors = F.colors.filter(function (x) { return x !== c; }); syncSwatches(); rerender(); }); });
     F.connect.forEach(function (c) { add(c, function () { F.connect = F.connect.filter(function (x) { return x !== c; }); rerender(); }); });
-    if (F.batteryMin > 0) add(F.batteryMin + 'h battery+', function () { F.batteryMin = 0; qsa('input[name=fbat]')[0].checked = true; rerender(); });
+    if (F.age) add(F.age.replace('-', '–') + ' yrs', function () { F.age = ''; qsa('input[name=fage]')[0].checked = true; rerender(); });
 
     host.innerHTML = chips.length
       ? chips.map(function (c, i) { return '<button class="chip removable" data-kill="' + i + '">' + c.label + '<span class="x">' + FR_ICON('x', 10) + '</span></button>'; }).join('')
@@ -207,7 +213,7 @@ UI.FPages.shop = function () {
     if (!e.target.checked) F.connect = F.connect.filter(function (x) { return x !== v; });
     rerender();
   });
-  qs('[data-filter-battery]').addEventListener('change', function (e) { if (e.target.name === 'fbat') { F.batteryMin = +e.target.value; rerender(); } });
+  qs('[data-filter-age]').addEventListener('change', function (e) { if (e.target.name === 'fage') { F.age = e.target.value; rerender(); } });
 
   qs('[data-sort]').addEventListener('change', function (e) { F.sort = e.target.value; rerender(); });
   qsa('.view-toggle button').forEach(function (b) {

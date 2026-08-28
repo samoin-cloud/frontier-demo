@@ -2,7 +2,7 @@
 
 🔴 **Live demo: https://samoin-cloud.github.io/frontier-demo/**
 
-A complete, **zero-dependency** e-commerce frontend covering the full 34-page spec: 28 hand-built pages, 232 procedurally-generated products, a design system with light/dark themes, cart → checkout → order tracking, account dashboard and more. Every asset is local except Google Fonts (which degrades gracefully to system fonts offline).
+A smart-toy storefront for ages 1–10 built as a **zero-dependency** frontend: 28 pages, 50 curated smart toys (ride-on cars, coding robots, interactive plush, STEM kits) with age filtering, a light/dark design system, cart → checkout → order tracking, account dashboard and more. Every asset is local except Google Fonts (which degrades gracefully to system fonts offline).
 
 ## Run it
 
@@ -47,7 +47,7 @@ frontier/
 
 ## Demo data
 
-- **232 products** across 8 categories, seeded deterministically (`mulberry32`) — identical on every load. Product art is procedurally generated SVG data-URIs (gradient + device glyph), swappable for real photography via `DATA.img(p)`.
+- **50 curated smart toys** across 8 play categories, with age ranges (1–10), playtime and safety specs. Product art is procedurally generated SVG (swap in real photography via `DATA.img(p)`). Product art is procedurally generated SVG data-URIs (gradient + device glyph), swappable for real photography via `DATA.img(p)`.
 - **30 journal articles**, **52 FAQs**, **22 testimonials**, **12 team members**, **32 brands**.
 - Specs tables, reviews, star distributions all generated per-product from the same seed.
 

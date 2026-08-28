@@ -44,7 +44,7 @@ UI.FPages.about = function () {
 
   /* milestones timeline */
   var MILESTONES = [
-    ['2019', 'The garage era', 'Two engineers, one 3D-printed phone stand, and a decision: only stock things we would use ourselves.'],
+    ['2019', 'The garage era', 'Two toymakers, one hand-painted wooden rattle, and a decision: only stock things we would use ourselves.'],
     ['2020', 'First warehouse', 'Orders hit 100/day. We moved from a living room to a real logistics floor in Austin.'],
     ['2021', 'Warranty 2.0', 'We doubled warranty coverage industry-wide to 2 years on everything. It became our signature promise.'],
     ['2022', 'Going global', 'EU & APAC fulfillment centers opened. 42 countries within reach of free express upgrades.'],

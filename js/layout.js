@@ -166,12 +166,12 @@ window.FRLAYOUT = (function () {
     var tpl = document.createElement('template');
     tpl.innerHTML = '<div class="search-overlay" id="searchOverlay"><div class="search-panel container">' +
       '<form role="search" data-search-form><div class="search-input-row">' + FR_ICON('search', 20) +
-      '<input type="search" placeholder="Search 224 products… try “earbuds” or “drone”" aria-label="Search products" data-search-input>' +
+      '<input type="search" placeholder="Search 50 smart toys… try “ride-on car” or “coding robot”" aria-label="Search products" data-search-input>' +
       '<button type="submit" class="btn btn-primary btn-sm">Search</button>' +
       '<button type="button" class="icon-btn" aria-label="Voice search (demo)" title="Voice search demo">' + FR_ICON('mic', 18) + '</button>' +
       '</div></form><div data-suggest></div>' +
       '<div class="hot-searches text-dim tiny">Trending:' +
-      ['wireless earbuds', 'smartwatch', 'mechanical keyboard', 'gaming console', '4k drone'].map(function (q) {
+      ['ride-on car', 'coding robot', 'sensory toy', 'stem kit', 'interactive plush'].map(function (q) {
         return '<button class="chip" data-hot-q="' + q + '">' + q + '</button>';
       }).join('') + '</div></div></div>';
     var ov = tpl.content.firstElementChild;
@@ -261,7 +261,7 @@ window.FRLAYOUT = (function () {
     f.innerHTML = '<div class="container">' +
       '<div class="footer-grid">' +
       '<div class="footer-col footer-about"><a class="logo" href="index.html" style="font-size:1.05rem">' + window.FR_LOGO(26) + ' FRONTIER</a>' +
-      '<p>Premium smart gadgets, obsessively curated. Since 2019 we have shipped 1.2M devices to tech lovers in 42 countries.</p>' +
+      '<p>Smart toys for ages 1–10, obsessively safety-tested. Since 2019 we have shipped 1.2M toys to families in 42 countries.</p>' +
       '<div class="social-row" aria-label="Social media">' +
       [['x', 'X (Twitter)'], ['instagram', 'Instagram'], ['youtube', 'YouTube'], ['tiktok', 'TikTok'], ['linkedin', 'LinkedIn']].map(function (s) {
         return '<a href="#" aria-label="' + s[1] + '" title="' + s[1] + '" onclick="UI.toast(\'info\',\'' + s[1] + '\',\'Social links are demo-only — plug in your profiles anytime.\');return false">' + FR_SOCIAL(s[0], 16) + '</a>';

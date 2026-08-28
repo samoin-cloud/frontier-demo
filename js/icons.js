@@ -70,7 +70,13 @@
     thumbDown: '<path d="M17 14V2M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z"/>',
     battery: '<rect x="2" y="7" width="16" height="10" rx="2"/><path d="M22 11v2M7 10.5v3m4-3v3"/>',
     cpu: '<rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3m6-3v3M9 19v3m6-3v3M2 9h3m-3 6h3M19 9h3m-3 6h3"/>',
-    layers: '<path d="m12 2 8.5 4.8L12 11.5 3.5 6.8 12 2Z"/><path d="m3.5 12 8.5 4.8 8.5-4.8M3.5 17 12 21.8 20.5 17"/>'
+    layers: '<path d="m12 2 8.5 4.8L12 11.5 3.5 6.8 12 2Z"/><path d="m3.5 12 8.5 4.8 8.5-4.8M3.5 17 12 21.8 20.5 17"/>',
+    car: '<path d="M4 16v-4.2L6 7h9l4.2 4.9H21a1 1 0 0 1 1 1V16h-2.1"/><circle cx="7.5" cy="17.2" r="2.1"/><circle cx="16.5" cy="17.2" r="2.1"/><path d="M9.6 17.2h4.8M2 16h3.4"/>',
+    robot: '<rect x="5" y="8.5" width="14" height="10" rx="2.5"/><circle cx="9.5" cy="13" r="1.1" fill="currentColor" stroke="none"/><circle cx="14.5" cy="13" r="1.1" fill="currentColor" stroke="none"/><path d="M12 8.5V4.5M9.5 4.5h5M9 18.5v2m6-2v2"/>',
+    plush: '<circle cx="12" cy="13.5" r="6.3"/><circle cx="6.8" cy="7.2" r="2.1"/><circle cx="17.2" cy="7.2" r="2.1"/><path d="M10 13h.01M14 13h.01M10.6 16.2c.9.8 1.9.8 2.8 0"/>',
+    blocks: '<rect x="3.5" y="13" width="7" height="7" rx="1.2"/><rect x="13.5" y="13" width="7" height="7" rx="1.2"/><rect x="8.5" y="4" width="7" height="7" rx="1.2"/>',
+    music: '<path d="M9 17.5V5.5l10-2.2v11.9"/><circle cx="6.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="15.2" r="2.5"/>',
+    puzzle: '<path d="M4 11h3.2a2.3 2.3 0 1 1 4.6 0H15V7.8a2.3 2.3 0 1 1 0-4.6V4h5v5h-3.2a2.3 2.3 0 1 0 0 4.6H20v6h-5v-3.2a2.3 2.3 0 1 0-4.6 0V20H4v-5h3.2"/>'
   };
 
   window.FR_ICON = function icon(name, size, cls) {

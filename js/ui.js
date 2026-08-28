@@ -251,7 +251,7 @@ window.UI = (function () {
       '<button class="btn btn-primary" data-atc="' + p.id + '" ' + (p.stock === 'out' ? 'disabled' : '') + '>' + FR_ICON('cart', 15) + (p.stock === 'out' ? ' Sold out' : ' Add') + '</button></div>' +
       '</div>' +
       '<div class="pc-body">' +
-      '<span class="pc-brand">' + p.brand + '</span>' +
+      '<div style="display:flex;align-items:center;gap:6px"><span class="pc-brand">' + p.brand + '</span>' + (p.ageLabel ? '<span class="badge soft" style="margin-left:auto;font-size:.6rem">' + p.ageLabel + '</span>' : '') + '</div>' +
       '<a class="pc-name" href="product.html?id=' + p.id + '">' + p.name + '</a>' +
       '<div class="pc-rating">' + stars(p.rating) + '<span>' + p.rating.toFixed(1) + '</span><span>(' + fmtCount(p.reviews) + ')</span></div>' +
       (opts.showDesc ? '<p class="pc-desc">' + desc + '</p>' : '') +

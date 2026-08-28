@@ -63,7 +63,7 @@ UI.FPages.product = function () {
     '</div>' +
 
     '<div class="pd-info">' +
-    '<a class="chip" href="shop.html?q=' + encodeURIComponent(p.brand) + '" style="margin-bottom:12px">' + p.brand + '</a>' +
+    '<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px"><a class="chip" href="shop.html?q=' + encodeURIComponent(p.brand) + '">' + p.brand + '</a>' + (p.ageLabel ? '<span class="badge new" style="font-size:.66rem">' + p.ageLabel + '</span>' : '') + '</div>' +
     '<h1 style="font-size:clamp(1.5rem,2.8vw,2.2rem);line-height:1.15">' + p.name + '</h1>' +
     '<div class="pc-rating" style="margin-top:10px">' + UI.stars(p.rating) + '<b>' + p.rating.toFixed(1) + '</b>' +
     '<a href="#reviews" class="btn-link small">(' + UI.fmtCount(p.reviews) + ' reviews)</a>' +
@@ -262,8 +262,10 @@ UI.FPages.product = function () {
     .sort(function (a, b) { return Math.abs(a.price - p.price) - Math.abs(b.price - p.price); }).slice(0, 8);
   qs('[data-related]').innerHTML = related.map(function (rp, i) { return UI.productCard(rp, { variant: i % 3 }); }).join('');
 
-  /* recently viewed bar */
-  var recentIds = STORE.get().recent.filter(function (x) { return x !== p.id; }).slice(0, 8);
+  /* recently viewed bar (skip IDs that no longer exist in the catalogue) */
+  var recentIds = STORE.get().recent.filter(function (x) { return x !== p.id; })
+    .map(function (x) { return DATA.productById(x); }).filter(Boolean).slice(0, 8)
+    .map(function (rp) { return rp.id; });
   var rvBar = qs('.recently-viewed');
   if (recentIds.length) {
     rvBar.classList.add('show');

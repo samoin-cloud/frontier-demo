@@ -94,21 +94,15 @@ UI.FPages.search = function () {
 /* ---------------- compare page ---------------- */
 UI.FPages.compare = function () {
   var ROWS = [
-    ['Display / Key hardware', function (p) { return (p.specs[0] || ['', '—'])[1]; }],
-    ['Processor / Chipset', function (p) { return specOf(p, 'Chipset') || specOf(p, 'Processor') || specOf(p, 'Performance') || specOf(p, 'Sensor') || specOf(p, 'Drivers') || '—'; }],
-    ['Memory', function (p) { return specOf(p, 'RAM') || '—'; }],
-    ['Storage', function (p) { return specOf(p, 'Storage') || 'Built-in'; }],
-    ['Battery', function (p) { return p.battery + 'h typical'; }],
+    ['Standout feature', function (p) { return (p.specs[0] || ['', '—'])[1]; }],
+    ['Age range', function (p) { return p.ageLabel || '—'; }],
+    ['Playtime / power', function (p) { return p.battery > 0 ? p.battery + 'h per charge' : 'No batteries needed'; }],
+    ['Connectivity', function (p) { return p.connectivity.join(', ') || '—'; }],
     ['Weight', function (p) { return p.weight + ' kg'; }],
-    ['Connectivity', function (p) { return p.connectivity.join(', '); }],
     ['Colors available', function (p) { return p.colors.length + ' finishes'; }],
     ['Rating', function (p) { return p.rating.toFixed(1) + ' / 5 (' + UI.fmtCount(p.reviews) + ')'; }],
     ['Price', function (p) { return DATA.money(p.price); }]
   ];
-  function specOf(p, key) {
-    for (var i = 0; i < p.specs.length; i++) if (p.specs[i][0].indexOf(key) === 0) return p.specs[i][1];
-    return '';
-  }
 
   var wrap = qs('[data-compare-zone]');
   function render() {

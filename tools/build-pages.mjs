@@ -36,7 +36,7 @@ function page(file, title, desc, body, pageKey, pageScripts) {
   const mods = (pageScripts && pageScripts.length ? pageScripts : PAGE_MODULES[pageKey] || [])
     .map(s => s.endsWith('.js') ? s.slice(0, -3) : s);
   const scripts = [...SHARED, ...mods.map(m => PAGES_DIR + m + '.js'), 'main.js']
-    .map(s => `<script src="js/${s.startsWith('js/') ? s.slice(3) : s}?v=23" defer></script>`).join('\n    ');
+    .map(s => `<script src="js/${s.startsWith('js/') ? s.slice(3) : s}?v=26" defer></script>`).join('\n    ');
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -51,9 +51,9 @@ function page(file, title, desc, body, pageKey, pageScripts) {
   <meta name="theme-color" content="#0A0A0F">
   <link rel="icon" href="${FAVICON}">
   ${FONTS}
-  <link rel="stylesheet" href="css/base.css?v=23">
-  <link rel="stylesheet" href="css/components.css?v=23">
-  <link rel="stylesheet" href="css/pages.css?v=23">
+  <link rel="stylesheet" href="css/base.css?v=26">
+  <link rel="stylesheet" href="css/components.css?v=26">
+  <link rel="stylesheet" href="css/pages.css?v=26">
 </head>
 <body data-page="${pageKey}">
 <main id="main" class="page-enter">
@@ -69,8 +69,8 @@ const W = {};
 const add = (f, t, d, body, key, s) => { W[f] = page(f, t, d, body, key, s); };
 
 /* ════════════════ HOME ════════════════ */
-add('index.html', 'FRONTIER — Premium Smart Gadgets & Cutting-Edge Tech',
-  'Discover 200+ curated smart gadgets: flagship phones, ANC audio, wearables, smart home, gaming and drones. Free shipping over $99 · 2-year warranty · 30-day returns.', `
+add('index.html', 'FRONTIER — Smart Toys for Ages 1–10 | Baby & Kids',
+  'Discover 50 curated smart toys for ages 1–10: ride-on smart cars, coding robots, interactive plush, STEM kits and more. Free shipping over $99 · CPSIA & CE certified.', `
 <section class="hero mesh noise" aria-label="Featured products">
   <div id="particleHost" style="position:absolute;inset:0;overflow:hidden;z-index:-1"></div>
   <div class="container" style="position:relative;z-index:2;width:100%">
@@ -84,7 +84,7 @@ add('index.html', 'FRONTIER — Premium Smart Gadgets & Cutting-Edge Tech',
 <section class="container" aria-label="Store highlights">
   <div class="trust-strip">
     <div class="trust-item reveal"><span class="t-ico">${I('truck')}</span><div><b>Free Shipping</b><span>On orders over $99</span></div></div>
-    <div class="trust-item reveal" data-delay="1"><span class="t-ico">${I('shield')}</span><div><b>2-Year Warranty</b><span>On everything we sell</span></div></div>
+    <div class="trust-item reveal" data-delay="1"><span class="t-ico">${I('shield')}</span><div><b>2-Year Play Promise</b><span>On every toy we sell</span></div></div>
     <div class="trust-item reveal" data-delay="2"><span class="t-ico">${I('refresh')}</span><div><b>30-Day Returns</b><span>No questions asked</span></div></div>
     <div class="trust-item reveal" data-delay="3"><span class="t-ico">${I('chat')}</span><div><b>24/7 Support</b><span>Humans + AI concierge</span></div></div>
   </div>
@@ -92,7 +92,7 @@ add('index.html', 'FRONTIER — Premium Smart Gadgets & Cutting-Edge Tech',
 
 <section class="section container" aria-labelledby="catsH">
   <div class="section-head reveal in-view">
-    <div><h2 id="catsH">Shop by category</h2><p>Eight worlds of technology, obsessively curated.</p></div>
+    <div><h2 id="catsH">Shop by category</h2><p>Eight worlds of play, obsessively curated.</p></div>
     <a class="btn btn-secondary" href="categories.html">All categories ${I('arrowRight', 15)}</a>
   </div>
   <div class="grid grid-4" data-cat-cards></div>
@@ -133,7 +133,7 @@ add('index.html', 'FRONTIER — Premium Smart Gadgets & Cutting-Edge Tech',
   <div class="container">
     <div class="section-head reveal in-view"><div><h2 id="whyH">Why choose FRONTIER?</h2><p>Premium retail is a craft. Here is ours.</p></div></div>
     <div class="grid grid-4">
-      <div class="feature-block reveal"><div class="ico">${I('sparkles')}</div><h3 class="small" style="font-size:1rem;margin-bottom:8px">Curated, never cluttered</h3><p class="text-dim small">Every product passes a 40-point hands-on review before it earns a spot.</p></div>
+      <div class="feature-block reveal"><div class="ico">${I('sparkles')}</div><h3 class="small" style="font-size:1rem;margin-bottom:8px">Curated, never cluttered</h3><p class="text-dim small">Every toy passes a 40-point safety & play review before it earns a spot.</p></div>
       <div class="feature-block reveal" data-delay="1"><div class="ico">${I('truck')}</div><h3 class="small" style="font-size:1rem;margin-bottom:8px">Same-day dispatch</h3><p class="text-dim small">Order before 2pm and it leaves our warehouse today — tracked door to door.</p></div>
       <div class="feature-block reveal" data-delay="2"><div class="ico">${I('shield')}</div><h3 class="small" style="font-size:1rem;margin-bottom:8px">Double warranty</h3><p class="text-dim small">Two years standard on everything, with instant advance replacement.</p></div>
       <div class="feature-block reveal" data-delay="3"><div class="ico">${I('refresh')}</div><h3 class="small" style="font-size:1rem;margin-bottom:8px">Painless returns</h3><p class="text-dim small">30 days, free label in every box, refunds within two days of arrival.</p></div>
@@ -176,12 +176,12 @@ add('index.html', 'FRONTIER — Premium Smart Gadgets & Cutting-Edge Tech',
 `, 'home');
 
 /* ════════════════ SHOP ════════════════ */
-add('shop.html', 'Shop All Products | FRONTIER', 'Filter and sort 224 premium smart gadgets by category, price, brand, rating, connectivity and battery life.', `
+add('shop.html', 'Shop All Products | FRONTIER', 'Filter and sort 50 premium smart toys by age group, category, price, brand, rating and connectivity.', `
 <div class="container">
   <nav class="breadcrumb" aria-label="Breadcrumb" data-breadcrumb></nav>
   <header style="margin-bottom:26px" class="reveal in-view">
     <h1>All products</h1>
-    <p class="text-dim">224 gadgets · updated daily · only what passed our lab tests.</p>
+    <p class="text-dim">50 smart toys · updated daily · only what passed our safety & play lab.</p>
   </header>
   <div class="shop-layout">
     <aside class="filter-sidebar" aria-label="Product filters">
@@ -201,8 +201,8 @@ add('shop.html', 'Shop All Products | FRONTIER', 'Filter and sort 224 premium sm
         <div class="flex wrap" style="gap:10px;padding-top:12px" data-filter-colors></div></div>
       <div class="filter-group"><div class="filter-head">Connectivity</div>
         <div class="filter-body" data-filter-connect></div></div>
-      <div class="filter-group" style="border:none"><div class="filter-head">Battery life</div>
-        <div class="filter-body" data-filter-battery></div></div>
+      <div class="filter-group" style="border:none"><div class="filter-head">Age group</div>
+        <div class="filter-body" data-filter-age></div></div>
     </aside>
     <div>
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px" data-sub-list></div>
@@ -286,7 +286,7 @@ add('product.html', 'Product | FRONTIER', 'Full specifications, gallery, verifie
 <div class="sticky-atc"><div class="container sticky-atc-inner"></div></div>`, 'product');
 
 /* ════════════════ ABOUT ════════════════ */
-add('about.html', 'About Us | FRONTIER', 'The story, values, team and milestones behind the internet\'s most obsessive smart gadget store.', `
+add('about.html', 'About Us | FRONTIER', 'The story, values, team and milestones behind the internet\'s most obsessive smart toy store.', `
 <header class="section mesh noise" style="text-align:center">
   <div class="container" style="position:relative;z-index:1">
     <span class="badge hot">Since 2019</span>
@@ -307,7 +307,7 @@ add('about.html', 'About Us | FRONTIER', 'The story, values, team and milestones
   </div>
 </section>
 <section class="container section" aria-labelledby="teamH">
-  <div class="section-head reveal in-view"><div><h2 id="teamH">Meet the team</h2><p>The people answering your tickets and testing your gadgets.</p></div></div>
+  <div class="section-head reveal in-view"><div><h2 id="teamH">Meet the team</h2><p>The people answering your tickets and testing your toys.</p></div></div>
   <div class="grid grid-4" data-team-grid></div>
 </section>
 <section class="section" style="background:var(--surface)" aria-labelledby="msH">
@@ -323,7 +323,7 @@ add('about.html', 'About Us | FRONTIER', 'The story, values, team and milestones
 <section class="container section" style="text-align:center;padding-top:12px">
   <div class="news-band mesh reveal in-view" style="max-width:760px;margin-inline:auto">
     <h2 style="color:#fff">Join our journey</h2>
-    <p style="opacity:.9;margin-top:10px">Be first to meet the gadgets that pass next month's gauntlet.</p>
+    <p style="opacity:.9;margin-top:10px">Be first to meet the toys that pass next month's gauntlet.</p>
     <a class="btn btn-lg" style="background:#fff;color:#151527;border:none;margin-top:20px" href="newsletter.html">Become an insider</a>
   </div>
 </section>`, 'about');
@@ -555,7 +555,7 @@ add('order-tracking.html', 'Track Your Order | FRONTIER', 'Live order tracking w
 <div class="container section" style="padding-top:10px" data-track-result></div>`, 'tracking');
 
 /* ════════════════ WISHLIST ════════════════ */
-add('wishlist.html', 'My Wishlist | FRONTIER', 'Saved gadgets, ready when you are — plus price-drop alerts.', `
+add('wishlist.html', 'My Wishlist | FRONTIER', 'Saved toys, ready when you are — plus price-drop alerts.', `
 <div class="container section">
   <div class="flex between center wrap" style="gap:16px">
     <div><h1>Wishlist <span class="badge soft" data-wish-count>0</span></h1>
@@ -591,7 +591,7 @@ add('login.html', 'Sign In / Register | FRONTIER', 'Welcome back — sign in, cr
       <div id="loginPanel">
         <form id="loginForm" novalidate>
           <h1 style="font-size:1.7rem">Welcome back 👋</h1>
-          <p class="small text-dim" style="margin:6px 0 22px">Good to see you again. Your gadgets missed you.</p>
+          <p class="small text-dim" style="margin:6px 0 22px">Good to see you again. Your toys missed you.</p>
           <div class="float-field"><input id="loginEmail" type="email" required placeholder=" " autocomplete="email"><label for="loginEmail">Email address</label></div>
           <div class="float-field"><input id="loginPassword" type="password" required placeholder=" " autocomplete="current-password"><label for="loginPassword">Password</label>
             <button type="button" class="pw-toggle" data-pw-toggle="loginPassword" aria-label="Show password">${I('eye', 16)}</button></div>
@@ -743,9 +743,9 @@ add('account.html', 'My Account | FRONTIER', 'Orders, addresses, payment methods
 </div>`, 'account');
 
 /* ════════════════ COMPARE ════════════════ */
-add('compare.html', 'Compare Products | FRONTIER', 'Side-by-side comparison of up to 4 gadgets — highlight only the differences that matter.', `
+add('compare.html', 'Compare Products | FRONTIER', 'Side-by-side comparison of up to 4 toys — highlight only the differences that matter.', `
 <div class="container section">
-  <h1>Compare gadgets ⚖️</h1>
+  <h1>Compare toys ⚖️</h1>
   <p class="text-dim" style="margin-bottom:26px">Pick up to four products in the shop ("Compare" checkbox on any card) and they appear here instantly.</p>
   <div data-compare-zone></div>
   <section class="section" style="padding-bottom:20px"><div class="section-head"><div><h2>Trending picks worth comparing</h2></div></div>
@@ -765,7 +765,7 @@ add('categories.html', 'Categories | FRONTIER', 'Explore eight worlds of technol
 <style>@media(max-width:800px){.legal-doc [data-seo-text]{columns:1}}</style>`, 'categories');
 
 /* ════════════════ SEARCH ════════════════ */
-add('search.html', 'Search Results | FRONTIER', 'Find exactly the gadget you meant — fuzzy search across names, brands and categories.', `
+add('search.html', 'Search Results | FRONTIER', 'Find exactly the toy you meant — fuzzy search across names, brands and categories.', `
 <div class="container section" style="padding-top:40px">
   <header>
     <h1>Results for <span class="grad-text" data-q-display>"…"</span></h1>
@@ -888,7 +888,7 @@ add('shipping-returns.html', 'Shipping & Returns | FRONTIER', 'Delivery speeds, 
   </article></div>`;
 })(), 'shipping-returns');
 
-add('warranty.html', 'Warranty & Care+ | FRONTIER', 'Every gadget carries a 2-year warranty — extendable with FRONTIER Care+ accident protection.', `
+add('warranty.html', 'Warranty & Care+ | FRONTIER', 'Every toy carries a 2-year warranty — extendable with FRONTIER Care+ accident protection.', `
 <div class="container section">
   <header style="text-align:center;max-width:60ch;margin-inline:auto">
     <span class="badge hot">${I('shield', 14)} SIGNATURE PROMISE</span>
@@ -936,7 +936,7 @@ add('gift-cards.html', 'Gift Cards | FRONTIER', 'Give the joy of choosing — di
   <header style="text-align:center">
     <span class="badge soft">THE EASY GIFT</span>
     <h1 style="margin-top:12px">FRONTIER Gift Cards</h1>
-    <p class="text-dim" style="margin:12px auto 0;max-width:52ch">For the person whose gadget taste outruns your knowledge. Digital arrives in minutes; physical cards are heavy engraved metal and feel incredible.</p>
+    <p class="text-dim" style="margin:12px auto 0;max-width:52ch">For the family whose toy box always has room for one more. Digital arrives in minutes; physical cards are heavy engraved metal and feel incredible.</p>
   </header>
   <div class="cart-layout section" style="padding-block:36px 0">
     <div class="co-panel">
@@ -1006,7 +1006,7 @@ add('404.html', 'Page Not Found (404)', 'This page drifted out of orbit. Let us 
     <h2 style="margin-top:6px">This page lost signal.</h2>
     <p class="text-dim" style="margin:14px auto 0;max-width:46ch">Even our robot got disconnected looking for it. Try searching — or grab one of the crowd favourites below while you're here.</p>
     <div class="promo-row" style="max-width:420px;margin:22px auto 0">
-      <input class="input" data-nf-search placeholder="Search 224 products…" aria-label="Site search">
+      <input class="input" data-nf-search placeholder="Search 50 smart toys…" aria-label="Site search">
       <button class="btn btn-primary" onclick="if(qs('[data-nf-search]').value.trim())location.href='search.html?q='+encodeURIComponent(qs('[data-nf-search]').value)">Search</button>
     </div>
     <div class="flex center wrap" style="justify-content:center;gap:10px;margin-top:22px">
@@ -1065,7 +1065,7 @@ add('newsletter.html', 'Newsletter | FRONTIER Insiders', 'One email a week packe
   <div>
     <span class="badge hot">INSIDERS CLUB</span>
     <h1 style="margin-top:16px">130,000 people open this email every Thursday.</h1>
-    <p class="text-dim" style="margin-top:14px;max-width:50ch">Not another promo blast: one issue, hand-assembled, containing exactly the three things worth knowing this week in gadgets.</p>
+    <p class="text-dim" style="margin-top:14px;max-width:50ch">Not another promo blast: one issue, hand-assembled, containing exactly the three things worth knowing this week in play.</p>
     <ul class="legal-doc" data-perk-list style="margin-top:18px;list-style:none;padding-left:0"></ul>
   </div>
   <div class="news-band mesh" style="padding:44px">
@@ -1097,8 +1097,8 @@ add('sitemap.html', 'HTML Sitemap | FRONTIER', 'Every public page and category c
       <h3 class="small">Sitemap trivia</h3>
       <ul class="kv-row-group" style="margin-top:10px">
         <div class="kv-row"><span class="text-dim small">Public pages</span><b class="mono">28</b></div>
-        <div class="kv-row"><span class="text-dim small">Categories</span><b class="mono">8 (+30 subs)</b></div>
-        <div class="kv-row"><span class="text-dim small">Products indexed</span><b class="mono">224</b></div>
+        <div class="kv-row"><span class="text-dim small">Categories</span><b class="mono">8 (+32 subs)</b></div>
+        <div class="kv-row"><span class="text-dim small">Toys indexed</span><b class="mono">50</b></div>
         <div class="kv-row"><span class="text-dim small">Journal articles</span><b class="mono">32</b></div>
       </ul>
       <style>.kv-row-group .kv-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--border-soft)}</style>
