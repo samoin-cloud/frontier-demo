@@ -67,7 +67,7 @@ frontier/
 
 ## Fidelity notes
 
-- Dark/light theme follows system preference, persists via `localStorage`, 300 ms transitions.
+- Light-only theme — dark mode was removed intentionally; the palette, rounded Fredoka/Nunito type and playful accents are tuned for a children's-store feel.
 - `prefers-reduced-motion` disables preloader, marquee, particles, parallax and confetti.
 - Focus-trap modals, skip link, ARIA labels/live regions, visible focus rings throughout.
 - Unique `<title>`/description/OG tags per page (edit `tools/build-pages.mjs`, then re-run).

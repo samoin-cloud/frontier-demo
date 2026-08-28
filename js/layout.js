@@ -5,18 +5,15 @@ window.FRLAYOUT = (function () {
   function qs(sel) { return document.querySelector(sel); }
   function qsa(sel, r) { return Array.prototype.slice.call((r || document).querySelectorAll(sel)); }
 
+  /* light-only store: dark mode removed by design */
   var THEMES = {
-    get: function () {
-      var saved = null;
-      try { saved = localStorage.getItem('frontier-theme'); } catch (e) {}
-      return saved || (window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-    },
+    get: function () { return 'light'; },
     set: function (t) {
-      document.documentElement.setAttribute('data-theme', t);
-      try { localStorage.setItem('frontier-theme', t); } catch (e) {}
-      qsa('[data-theme-ico]').forEach(function (b) { b.innerHTML = t === 'light' ? FR_ICON('moon', 18) : FR_ICON('sun', 18); });
+      document.documentElement.setAttribute('data-theme', 'light');
+      document.documentElement.style.colorScheme = 'light';
+      try { localStorage.removeItem('frontier-theme'); } catch (e) {}
     },
-    toggle: function () { this.set(this.get() === 'dark' ? 'light' : 'dark'); }
+    toggle: function () {}
   };
 
   /* ---------------- header ---------------- */
@@ -54,7 +51,6 @@ window.FRLAYOUT = (function () {
       '<div class="mini-cart-items"></div><div class="mc-foot"><div class="mc-subtotal">Subtotal <b data-mc-subtotal>—</b></div>' +
       '<a class="btn btn-secondary btn-sm btn-block" href="cart.html">View cart</a>' +
       '<a class="btn btn-primary btn-sm btn-block" href="checkout.html">Checkout ' + FR_ICON('arrowRight', 14) + '</a></div></div></div>' +
-      '<button class="icon-btn" data-theme-ico aria-label="Toggle dark mode">' + FR_ICON(THEMES.get() === 'dark' ? 'sun' : 'moon', 19) + '</button>' +
       '</div></div></div></header>';
 
     document.body.insertAdjacentHTML('afterbegin', header);
@@ -69,8 +65,6 @@ window.FRLAYOUT = (function () {
     // badges
     updateBadges();
     STORE.subscribe(updateBadges);
-
-    qsa('[data-theme-ico]').forEach(function (b) { b.addEventListener('click', function () { THEMES.toggle(); }); });
 
     // scrolled state
     var onScroll = UI.debounce(function () {

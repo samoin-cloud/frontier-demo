@@ -29,14 +29,14 @@ const PAGE_MODULES = {
 };
 
 const FAVICON = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="11" fill="#6C5CE7"/><path d="M13 10h15l-2.6 5.4H18v4h6.8L22.2 25H18v7h-5V10Z" fill="#fff"/></svg>');
-const FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">';
+const FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">';
 
 function page(file, title, desc, body, pageKey, pageScripts) {
   pageKey = pageKey || file.replace('.html', '').replace('404', '404');
   const mods = (pageScripts && pageScripts.length ? pageScripts : PAGE_MODULES[pageKey] || [])
     .map(s => s.endsWith('.js') ? s.slice(0, -3) : s);
   const scripts = [...SHARED, ...mods.map(m => PAGES_DIR + m + '.js'), 'main.js']
-    .map(s => `<script src="js/${s.startsWith('js/') ? s.slice(3) : s}?v=26" defer></script>`).join('\n    ');
+    .map(s => `<script src="js/${s.startsWith('js/') ? s.slice(3) : s}?v=28" defer></script>`).join('\n    ');
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -48,12 +48,12 @@ function page(file, title, desc, body, pageKey, pageScripts) {
   <meta property="og:description" content="${desc}">
   <meta property="og:type" content="${file === 'index.html' ? 'website' : 'page'}">
   <meta property="og:site_name" content="FRONTIER">
-  <meta name="theme-color" content="#0A0A0F">
+  <meta name="theme-color" content="#FFFDF8">
   <link rel="icon" href="${FAVICON}">
   ${FONTS}
-  <link rel="stylesheet" href="css/base.css?v=26">
-  <link rel="stylesheet" href="css/components.css?v=26">
-  <link rel="stylesheet" href="css/pages.css?v=26">
+  <link rel="stylesheet" href="css/base.css?v=28">
+  <link rel="stylesheet" href="css/components.css?v=28">
+  <link rel="stylesheet" href="css/pages.css?v=28">
 </head>
 <body data-page="${pageKey}">
 <main id="main" class="page-enter">

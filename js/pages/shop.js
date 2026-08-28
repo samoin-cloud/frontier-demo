@@ -170,7 +170,7 @@ UI.FPages.shop = function () {
     host.innerHTML = chips.length
       ? chips.map(function (c, i) { return '<button class="chip removable" data-kill="' + i + '">' + c.label + '<span class="x">' + FR_ICON('x', 10) + '</span></button>'; }).join('')
         + '<span class="chip btn-link-like" style="border-style:dashed;color:var(--dim)" role="button" tabindex="0" data-reset-all2>Clear all ✕</span>'
-      : totalCount != null && totalCount > 0 ? '<span class="small text-dim">Tip: use filters on the left to narrow down 200+ gadgets.</span>' : '';
+      : totalCount != null && totalCount > 0 ? '<span class="small text-dim">Tip: use filters on the left to narrow down 50 smart toys.</span>' : '';
     qsa('[data-kill]', host).forEach(function (btn) {
       btn.addEventListener('click', function () { chips[+btn.dataset.kill].kill(); });
     });

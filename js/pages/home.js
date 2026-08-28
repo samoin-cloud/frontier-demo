@@ -2,14 +2,16 @@
 UI.FPages.home = function () {
   var heroSlides = DATA.heroSlides;
 
-  /* ---- particles ---- */
+  /* ---- particles (candy colored) ---- */
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
     var host = qs('#particleHost');
-    for (var i = 0; i < 14; i++) {
-      var s = 4 + Math.random() * 8;
+    var hues = [265, 320, 190, 40, 145, 12];
+    for (var i = 0; i < 16; i++) {
+      var s = 5 + Math.random() * 8;
       var dot = UI.el('<span class="particle"></span>');
       dot.style.cssText = 'left:' + (Math.random() * 100) + '%;width:' + s + 'px;height:' + s + 'px;' +
-        'bottom:-20px;animation-duration:' + (9 + Math.random() * 14) + 's;animation-delay:' + (-Math.random() * 18) + 's;opacity:' + (.2 + Math.random() * .4);
+        'bottom:-20px;animation-duration:' + (9 + Math.random() * 14) + 's;animation-delay:' + (-Math.random() * 18) + 's;opacity:' + (.3 + Math.random() * .4) + ';' +
+        'background:hsl(' + hues[i % hues.length] + ',85%,64%);border-radius:' + (Math.random() < .5 ? '50%' : '3px') + ';transform:rotate(' + Math.floor(Math.random() * 90) + 'deg)';
       host.appendChild(dot);
     }
   }
