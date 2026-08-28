@@ -263,7 +263,9 @@ window.FRLAYOUT = (function () {
       '<div class="footer-col footer-about"><a class="logo" href="index.html" style="font-size:1.05rem">' + window.FR_LOGO(26) + ' FRONTIER</a>' +
       '<p>Premium smart gadgets, obsessively curated. Since 2019 we have shipped 1.2M devices to tech lovers in 42 countries.</p>' +
       '<div class="social-row" aria-label="Social media">' +
-      ['X', 'IG', 'YT', 'TT', 'in'].map(function (s) { return '<a href="#" aria-label="' + s + '" onclick="return false"><span class="mono" style="font-size:.62rem;font-weight:700">' + s + '</span></a>'; }).join('') + '</div></div>' +
+      [['x', 'X (Twitter)'], ['instagram', 'Instagram'], ['youtube', 'YouTube'], ['tiktok', 'TikTok'], ['linkedin', 'LinkedIn']].map(function (s) {
+        return '<a href="#" aria-label="' + s[1] + '" title="' + s[1] + '" onclick="UI.toast(\'info\',\'' + s[1] + '\',\'Social links are demo-only — plug in your profiles anytime.\');return false">' + FR_SOCIAL(s[0], 16) + '</a>';
+      }).join('') + '</div></div>' +
 
       '<div class="footer-col"><h4>Shop</h4>' + [
         ['shop.html', 'All Products'], ['categories.html', 'Categories'], ['compare.html', 'Compare Tools'],

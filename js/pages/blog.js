@@ -130,7 +130,9 @@ UI.FPages['blog-post'] = function () {
 
     '<aside class="co-panel" style="display:flex;gap:16px;margin-top:38px;align-items:center">' +
     '<span class="avatar lg">' + post.author[0] + '</span><div><b>' + post.author + '</b><br><span class="small text-dim">' + post.authorBio + '</span>' +
-    '<div style="display:flex;gap:8px;margin-top:10px">' + ['X', 'IG', 'YT'].map(function (s) { return '<span class="pay-badge">' + s + '</span>'; }).join('') + '</div></div></aside>' +
+    '<div style="display:flex;gap:8px;margin-top:10px">' + [['x', 'X'], ['youtube', 'YouTube'], ['linkedin', 'LinkedIn']].map(function (s) {
+      return '<a class="pay-chip" href="#" onclick="UI.toast(\'info\',\'' + s[1] + '\',\'Author profiles are demo-only.\');return false" aria-label="' + s[1] + '" title="' + s[1] + '" style="min-width:44px">' + FR_SOCIAL(s[0], 14) + '</a>';
+    }).join('') + '</div></div></aside>' +
 
     '<section id="comments" style="margin-top:44px"><h2>Comments <span class="badge soft" data-c-count>2</span></h2>' +
     '<div class="review-item" style="display:flex;gap:14px"><span class="avatar">R</span><div><b>Riley Kim</b> <span class="tiny text-dim">2 days ago</span>' +
@@ -148,8 +150,8 @@ UI.FPages['blog-post'] = function () {
 
     '<aside style="position:sticky;top:96px;display:grid;gap:22px;align-self:start">' +
     '<div class="co-panel"><h3 class="small" style="margin-bottom:10px">Share this story</h3><div class="social-btns">' +
-    [['X / Twitter', 'share'], ['Copy link', 'link']].map(function (s, i) {
-      return '<button class="social-btn" ' + (i === 1 ? 'id="shareCopy"' : '') + '>' + FR_ICON(s[1], 16) + s[0] + '</button>';
+    [['X', 'x', 'Share on X'], ['Copy link', 'link', 'Copy article URL']].map(function (s) {
+      return '<button class="social-btn" ' + (s[1] === 'link' ? 'id="shareCopy"' : 'onclick="UI.toast(\'success\',\'Shared!\',\'Opening X composer is disabled in this demo.\')"') + '>' + (s[1] === 'link' ? FR_ICON(s[1], 16) : FR_SOCIAL(s[1], 16)) + s[0] + '</button>';
     }).join('') + '</div></div>' +
     '<div class="co-panel"><h3 class="small" style="margin-bottom:10px">Related articles</h3>' +
     relatedHtml(post) + '</div>' +
