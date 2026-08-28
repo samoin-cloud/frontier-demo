@@ -268,6 +268,9 @@ li.has-mega:hover .mega,li.has-mega:focus-within .mega{opacity:1;visibility:visi
 .footer-bottom{border-top:1px solid var(--border-soft);padding-block:20px;display:flex;flex-wrap:wrap;gap:var(--s-md);align-items:center;justify-content:space-between}
 .pay-badges{display:flex;gap:8px;flex-wrap:wrap}
 .pay-badge{font-family:var(--font-mono);font-size:.66rem;font-weight:600;letter-spacing:.04em;padding:5px 10px;border:1px solid var(--border);border-radius:var(--r-sm);color:var(--dim);background:var(--surface-2)}
+.pay-chip{display:inline-grid;place-items:center;height:28px;min-width:56px;padding:0 11px;border:1px solid var(--border);border-radius:9px;background:var(--surface-2);transition:transform var(--t-fast),border-color var(--t-fast),box-shadow var(--t-base),background var(--t-fast)}
+.pay-chip:hover{transform:translateY(-2px);border-color:rgba(108,92,231,.55);background:var(--surface);box-shadow:0 4px 14px rgba(108,92,231,.16)}
+.pay-chip svg{display:block;height:15px;width:auto}
 .footer-links-misc{display:flex;gap:18px;font-size:.8rem;color:var(--dim);flex-wrap:wrap}
 @media(max-width:1080px){.footer-grid{grid-template-columns:1fr 1fr 1fr}}
 @media(max-width:720px){.footer-grid{grid-template-columns:1fr 1fr}}

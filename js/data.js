@@ -190,9 +190,11 @@ window.DATA = (function () {
   var BEST_SELLERS = PRODUCTS.slice().sort(function (a, b) { return (b.reviews * b.rating) - (a.reviews * a.rating); }).slice(0, 12);
 
   var dealProduct = (function () {
-    var audioDeals = PRODUCTS.filter(function (p) { return p.category === 'audio' && p.oldPrice && p.price > 80 && p.price < 320 && p.stock === 'in'; });
-    var best = audioDeals.sort(function (a, b) { return b.discount - a.discount; })[0];
-    return byId(104) || best || PRODUCTS[2];
+    var audioDeals = PRODUCTS.filter(function (p) { return p.category === 'audio' && p.oldPrice && p.price > 80 && p.price < 320 && p.stock === 'in'; })
+      .sort(function (a, b) { return b.discount - a.discount; });
+    return audioDeals[0] ||
+      PRODUCTS.filter(function (p) { return p.oldPrice && p.stock === 'in'; }).sort(function (a, b) { return b.discount - a.discount; })[0] ||
+      PRODUCTS[2];
   })();
 
   var heroSlides = [

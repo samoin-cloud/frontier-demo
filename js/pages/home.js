@@ -59,6 +59,30 @@ UI.FPages.home = function () {
   /* ---- new arrivals scroller ---- */
   qs('[data-new-arrivals]').innerHTML = DATA.newArrivals.slice(0, 10).map(function (p, i) { return UI.productCard(p, { variant: i % 3 }); }).join('');
 
+  /* ---- smooth, state-aware horizontal scroller arrows ---- */
+  qsa('.h-scroll-wrap').forEach(function (wrap) {
+    var row = wrap.querySelector('.h-scroll');
+    var prev = wrap.querySelector('.h-arrow.prev');
+    var next = wrap.querySelector('.h-arrow.next');
+    if (!row || !prev || !next) return;
+    function cardStep() {
+      var card = row.querySelector('.product-card');
+      return (card ? card.getBoundingClientRect().width + 24 : 300) * 2;
+    }
+    function update() {
+      var max = row.scrollWidth - row.clientWidth - 1;
+      prev.disabled = row.scrollLeft <= 6;
+      next.disabled = row.scrollLeft >= max - 6;
+      wrap.classList.toggle('no-overflow', row.scrollWidth <= row.clientWidth + 1);
+    }
+    prev.addEventListener('click', function () { row.scrollBy({ left: -cardStep(), behavior: 'smooth' }); });
+    next.addEventListener('click', function () { row.scrollBy({ left: cardStep(), behavior: 'smooth' }); });
+    row.addEventListener('scroll', UI.debounce(update, 60), { passive: true });
+    window.addEventListener('resize', UI.debounce(update, 150));
+    update();
+    setTimeout(update, 400); // after images/fonts settle
+  });
+
   /* ---- trending grid with live view counts ---- */
   qs('[data-trending]').innerHTML = DATA.trending.map(function (p, i) { return UI.productCard(p, { variant: i % 3 }); }).join('');
   var viewers = {};

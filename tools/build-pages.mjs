@@ -36,7 +36,7 @@ function page(file, title, desc, body, pageKey, pageScripts) {
   const mods = (pageScripts && pageScripts.length ? pageScripts : PAGE_MODULES[pageKey] || [])
     .map(s => s.endsWith('.js') ? s.slice(0, -3) : s);
   const scripts = [...SHARED, ...mods.map(m => PAGES_DIR + m + '.js'), 'main.js']
-    .map(s => `<script src="js/${s.startsWith('js/') ? s.slice(3) : s}?v=19" defer></script>`).join('\n    ');
+    .map(s => `<script src="js/${s.startsWith('js/') ? s.slice(3) : s}?v=22" defer></script>`).join('\n    ');
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -51,9 +51,9 @@ function page(file, title, desc, body, pageKey, pageScripts) {
   <meta name="theme-color" content="#0A0A0F">
   <link rel="icon" href="${FAVICON}">
   ${FONTS}
-  <link rel="stylesheet" href="css/base.css?v=19">
-  <link rel="stylesheet" href="css/components.css?v=19">
-  <link rel="stylesheet" href="css/pages.css?v=19">
+  <link rel="stylesheet" href="css/base.css?v=22">
+  <link rel="stylesheet" href="css/components.css?v=22">
+  <link rel="stylesheet" href="css/pages.css?v=22">
 </head>
 <body data-page="${pageKey}">
 <main id="main" class="page-enter">

@@ -6,8 +6,8 @@
 
 /* ============ HERO slider ============ */
 .hero{position:relative;min-height:min(88vh,760px);display:flex;align-items:center;isolation:isolate}
-.hero-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .8s ease;z-index:1;display:flex;align-items:center}
-.hero-slide.active{opacity:1;visibility:visible;z-index:2}
+.hero-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transform:translateX(46px) scale(.985);transition:opacity .65s ease,transform .65s cubic-bezier(.22,.61,.36,1),visibility .65s;z-index:1;display:flex;align-items:center}
+.hero-slide.active{opacity:1;visibility:visible;transform:none;z-index:2}
 .hero-copy{max-width:560px}
 .hero-kicker{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--sec);margin-bottom:18px}
 .hero-title{font-size:clamp(2.4rem,5.6vw,4.3rem);line-height:1.06;margin-bottom:20px}
@@ -57,11 +57,13 @@
 
 /* ============ horizontal scroller ============ */
 .h-scroll-wrap{position:relative}
-.h-scroll{display:flex;gap:var(--s-lg);overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 4px 24px;scrollbar-width:none}
+.h-scroll{display:flex;gap:var(--s-lg);overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:4px;padding:8px 4px 24px;scrollbar-width:none}
 .h-scroll::-webkit-scrollbar{display:none}
 .h-scroll>*{flex:0 0 clamp(240px,23vw,290px);scroll-snap-align:start}
 .h-arrow{position:absolute;top:42%;z-index:4}
 .h-arrow.prev{left:-10px}.h-arrow.next{right:-10px}
+.h-arrow:disabled{opacity:.25;pointer-events:none}
+.h-scroll-wrap.no-overflow .h-arrow{display:none}
 
 /* ============ deal of day ============ */
 .deal-card{position:relative;border-radius:var(--r-xl);overflow:hidden;background:linear-gradient(115deg,#2a2352,#161a3a 55%,#10333f);border:1px solid rgba(108,92,231,.4);display:grid;grid-template-columns:1.15fr 1fr;min-height:340px;isolation:isolate}

@@ -240,6 +240,19 @@ window.FRLAYOUT = (function () {
     document.addEventListener('keydown', esc);
   }
 
+  /* ---------------- payment brand marks ---------------- */
+  var PAY_MARKS = {
+    visa: '<svg viewBox="0 0 52 18" role="img" aria-label="Visa"><text x="26" y="14.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-style="italic" font-weight="900" letter-spacing="1.2" fill="currentColor">VISA</text></svg>',
+    mastercard: '<svg viewBox="0 0 52 18" role="img" aria-label="Mastercard"><circle cx="21" cy="9" r="8.2" fill="#EB001B"/><circle cx="31" cy="9" r="8.2" fill="#F79E1B"/><path d="M26 3.1a8.2 8.2 0 0 1 0 11.8 8.2 8.2 0 0 1 0-11.8Z" fill="#FF5F00"/></svg>',
+    amex: '<svg viewBox="0 0 52 18" role="img" aria-label="American Express"><rect x="2" y="0.5" width="48" height="17" rx="3" fill="#2E77BC"/><text x="26" y="12.6" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.5" font-weight="bold" letter-spacing="1" fill="#fff">AMEX</text></svg>',
+    paypal: '<svg viewBox="0 0 52 18" role="img" aria-label="PayPal"><text x="26" y="14" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-style="italic" font-weight="900"><tspan fill="#003087">Pay</tspan><tspan fill="#009CDE">Pal</tspan></text></svg>',
+    applepay: '<svg viewBox="0 0 58 18" role="img" aria-label="Apple Pay"><g fill="currentColor" transform="translate(1,-0.6) scale(0.8)"><path d="M17.05 12.54c-.03-2.89 2.36-4.27 2.47-4.34-1.35-1.97-3.44-2.24-4.18-2.27-1.78-.18-3.47 1.05-4.37 1.05-.9 0-2.29-1.02-3.77-1-1.94.03-3.72 1.13-4.72 2.86-2.01 3.49-.51 8.66 1.45 11.49.96 1.39 2.1 2.94 3.6 2.88 1.44-.06 1.99-.93 3.73-.93s2.23.93 3.76.9c1.56-.03 2.54-1.41 3.49-2.8 1.1-1.61 1.55-3.17 1.58-3.25-.03-.02-3.02-1.16-3.04-4.59Z"/><path d="M14.84 4.06c.8-.97 1.34-2.32 1.19-3.66-1.15.05-2.55.77-3.38 1.73-.74.86-1.39 2.24-1.22 3.56 1.29.1 2.6-.65 3.41-1.63Z"/></g><text x="24" y="14" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="currentColor">Pay</text></svg>',
+    gpay: '<svg viewBox="0 0 58 18" role="img" aria-label="Google Pay"><text x="28" y="14" text-anchor="middle" font-family="Arial, sans-serif" font-size="13.5" font-weight="600"><tspan fill="#4285F4" font-weight="700">G</tspan><tspan fill="currentColor"> Pay</tspan></text></svg>'
+  };
+  function payMark(kind) {
+    return '<span class="pay-chip" title="' + kind + '">' + PAY_MARKS[kind] + '</span>';
+  }
+
   /* ---------------- footer ---------------- */
   function buildFooter() {
     var year = new Date().getFullYear();
@@ -273,7 +286,7 @@ window.FRLAYOUT = (function () {
       '</div>' +
 
       '<div class="footer-bottom"><span class="small text-dim">© ' + year + ' FRONTIER Technologies. All rights reserved.</span>' +
-      '<div class="pay-badges" aria-label="Accepted payments">' + ['VISA', 'MASTERCARD', 'AMEX', 'PAYPAL', 'APPLE PAY', 'G PAY'].map(function (p) { return '<span class="pay-badge">' + p + '</span>'; }).join('') + '</div>' +
+      '<div class="pay-badges" aria-label="Accepted payments">' + ['visa', 'mastercard', 'amex', 'paypal', 'applepay', 'gpay'].map(payMark).join('') + '</div>' +
       '<div class="footer-links-misc">' + [
         ['privacy.html', 'Privacy'], ['terms.html', 'Terms'], ['shipping-returns.html', 'Returns']
       ].map(function (l) { return '<a href="' + l[0] + '">' + l[1] + '</a>'; }).join('') + '</div></div></div>';
